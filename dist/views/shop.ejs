@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('includes/head.ejs') %>
+    </head>
+    <body>
+        <div class="container">
+            <header><%- include('includes/navigation.ejs') %></header>
+            <main>
+                <div class="row h-100 justify-content-center align-items-center">
+                    <h3>Shopping List</h3>
+                </div>
+                <div class="card-columns">
+                    <% if (products.length == 0) { %>
+                        <h4>No Products available</h4>
+                    <% } %>
+                    <% for (const product of products) { %>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h4><%= product.title %></h4>
+                                </div>
+                            </div>
+                            <img src="images/demo-product1.jpg" alt="Card image" class="card-img-top"/>
+                            <div class="card-footer">
+                                <p class="card-text">Some example text</p>
+                                <a href="#" class="btn btn-primary">See Product</a>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

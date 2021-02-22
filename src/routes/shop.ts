@@ -1,14 +1,15 @@
-import path from 'path';
+import path from "path";
 
-import {Router} from 'express';
+import { Router } from "express";
 
-import rootDir from '../utils/path';
+import rootDir from "../utils/path";
+import { products as products } from "./admin";
 
 const router = Router();
 
 router.get("/", (req, res, next) => {
-    res.sendFile(path.join(rootDir, 'views', 'shop.html'));
+    // res.sendFile(path.join(rootDir, "views", "shop.html"));
+    res.render("shop", { products: products, docTitle: "Shopping List" });
 });
 
-export default router;
-
+export { router };

@@ -1,13 +1,11 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const path_1 = __importDefault(require("path"));
+exports.router = void 0;
 const express_1 = require("express");
-const path_2 = __importDefault(require("../utils/path"));
+const admin_1 = require("./admin");
 const router = express_1.Router();
+exports.router = router;
 router.get("/", (req, res, next) => {
-    res.sendFile(path_1.default.join(path_2.default, 'views', 'shop.html'));
+    // res.sendFile(path.join(rootDir, "views", "shop.html"));
+    res.render("shop", { products: admin_1.products, docTitle: "Shopping List" });
 });
-exports.default = router;
