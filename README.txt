@@ -1,2 +1,2 @@
-Setting up NodeJs and TypeJs:
+Setting up NodeJs and TypeScript:
 https://www.digitalocean.com/community/tutorials/setting-up-a-node-project-with-typescript
